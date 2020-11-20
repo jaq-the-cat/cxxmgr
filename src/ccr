@@ -18,7 +18,7 @@ switch_mode() {
 
 MODE="source"
 ARGS=""
-if [ -e cproj ]; then
+if [ -e cxxproj ]; then
     while read p; do
     R="$(switch_mode $p)"
     RESL=$(echo "$R" | cut -c1)
