@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 switch_mode() {
     case $1 in 
