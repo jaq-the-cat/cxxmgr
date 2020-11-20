@@ -6,9 +6,9 @@ gcc dependencies and compiler flags.
 
 ## Installation
 
-To install cxxmgr, simply download the file `cppcr` or `ccr` (depending on your needs),
-    and put them somewhere in your `$PATH`. That could be `.local/bin`, `.scripts`,
-    or whatever else you want.
+To install cxxmgr, simply download `cppcr` or `ccr` (depending on your needs),
+    and put it somewhere in your `$PATH`. That could be `.local/bin`, `.scripts`,
+    or whatever else you want, even `/usr/bin`, but that's not recommended.
 
 ## How to use
 
