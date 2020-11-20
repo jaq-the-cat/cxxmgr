@@ -1,0 +1,45 @@
+#!/bin/bash
+
+switch_mode() {
+    case $1 in 
+        -SOURCE)
+            echo "0source"
+            ;;
+        -COMMANDS)
+            echo "0commands"
+            ;;
+        -LIBS)
+            echo "0libs"
+            ;;
+        *)
+            echo "1$1"
+    esac
+}
+
+MODE="source"
+ARGS=""
+if [ -e cppproj ]; then
+    while read p; do
+    R="$(switch_mode $p)"
+    RESL=$(echo "$R" | cut -c1)
+    if [ "$RESL" = "0" ]; then
+        MODE=$(echo "$R" | cut -c2-)
+    else
+        case $MODE in
+            "libs")
+                ARGS="$ARGS -l$p"
+                ;;
+            "source")
+                ARGS="$ARGS $p"
+                ;;
+            "commands")
+                ARGS="$ARGS `$p`"
+                ;;
+        esac
+    fi
+    done <cxxproj
+fi
+
+
+echo "g++ $@ $ARGS && ./a.out"
+g++ $@ $ARGS && ./a.out
