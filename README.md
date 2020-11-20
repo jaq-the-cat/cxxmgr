@@ -13,7 +13,8 @@ To install cxxmgr, simply download `cppcr` or `ccr` (depending on your needs),
 ## How to use
 
 To use cxxmgr, you need a `cxxproj` file in your source folder. That file is going
-to be parsed by a bash script and its contents put in as arguments for `gcc` or `g++`.
+to be parsed by a shell script and its contents put in as arguments for `gcc` or
+`g++`.
 
 After that's done, simply run `cppcr` or `ccr` and your program will be compiled
 and run.
